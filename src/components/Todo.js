@@ -1,4 +1,4 @@
-import { Box, ListItem, Typography } from '@mui/material'
+import { Box, ListItem, Typography, IconButton } from '@mui/material'
 import React from 'react'
 
 class Todo extends React.Component {
@@ -9,6 +9,9 @@ class Todo extends React.Component {
                     <Box justifyContent="center" alignItems="center" >
                         <Typography variant="body1" > ✅ Task: {this.props.todo}</Typography>
                         <Typography variant="body2" > ⏰ Deadline: {this.props.deadline}</Typography>
+                        <IconButton>
+                            X
+                        </IconButton>
                     </Box>
                 </ListItem>
             </Box >
