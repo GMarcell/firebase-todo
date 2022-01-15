@@ -1,5 +1,40 @@
 .App {
   text-align: center;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+  color: beige;
+}
+
+body, html, #root{
+  height: 100%;
+}
+
+.todo-form{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+.task-input{
+  background-color: beige !important;
+  color: #282c34 !important;
+}
+.date-input{
+  background-color: beige !important;
+  color: #282c34 !important;
+  padding: 0 !important;
+}
+
+li{
+  text-align: center;
 }
 
 .App-logo {

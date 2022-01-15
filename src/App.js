@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import db from './firebase';
+import { useEffect, useState } from 'react';
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore"
+import TodoForm from './components/TodoForm';
+import Todo from './components/Todo';
 
 function App() {
+  const dbTodoRef = collection(db, "todo")
+  const [todos, setTodos] = useState([])
+  useEffect(() => {
+    const getTodos = async () => {
+      const data = await getDocs(dbTodoRef)
+      setTodos(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    }
+    getTodos()
+  }, [todos])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> 🚀 Todo List</h1>
+      <TodoForm />
+      {todos.map((todo) => {
+        return (
+          <div>
+            <Todo todo={todo.task} deadline={todo.deadline} />
+          </div>
+        )
+      })}
     </div>
   );
 }
