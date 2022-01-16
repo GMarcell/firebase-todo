@@ -23,6 +23,12 @@ body, html, #root{
   flex-direction: column;
 }
 
+.addTaskbtn{
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 60px !important;
+}
+
 .task-input{
   background-color: beige !important;
   color: #282c34 !important;

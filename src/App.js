@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { collection, getDocs } from "firebase/firestore"
 import TodoForm from './components/TodoForm';
 import Todo from './components/Todo';
+import { Button, IconButton } from '@mui/material';
+import AddTaskIcon from '@mui/icons-material/AddTask';
 
 function App() {
   const dbTodoRef = collection(db, "todo")
@@ -26,6 +28,9 @@ function App() {
           </div>
         )
       })}
+      <Button variant='contained' className='addTaskbtn'>
+        <AddTaskIcon fontSize='large' />
+      </Button>
     </div>
   );
 }
