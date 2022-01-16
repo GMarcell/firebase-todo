@@ -1,7 +1,7 @@
 import './App.css';
 import db from './firebase';
 import { useEffect, useState } from 'react';
-import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
 import TodoForm from './components/TodoForm';
 import Todo from './components/Todo';
 
@@ -22,7 +22,7 @@ function App() {
       {todos.map((todo) => {
         return (
           <div>
-            <Todo todo={todo.task} deadline={todo.deadline} />
+            <Todo todo={todo.task} deadline={todo.deadline} iddoc={todo.id} />
           </div>
         )
       })}

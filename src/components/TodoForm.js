@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore"
+import { addDoc, collection } from "firebase/firestore"
 import db from '../firebase'
 import { Button, TextField } from '@mui/material'
 import "../App.css"
