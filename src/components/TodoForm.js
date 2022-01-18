@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { addDoc, collection } from "firebase/firestore"
 import db from '../firebase'
-import { Button, TextField } from '@mui/material'
 import "../App.css"
 
 
@@ -21,14 +20,14 @@ function TodoForm() {
     return (
         <form onSubmit={addTask} className='todo-form' >
             <div className='inputs'>
-                <TextField
+                <input
                     sx={{ m: 0.5, p: 0 }}
                     className='task-input'
                     size="small" variant="filled"
                     placeholder='Task...'
                     onChange={(event) => { setnewTask(event.target.value) }}
                     value={newTask} />
-                <TextField
+                <input
                     sx={{ m: 0.5, p: 0 }}
                     className="date-input"
                     type="date"
@@ -37,7 +36,7 @@ function TodoForm() {
                     onChange={(event) => { setnewDeadline(event.target.value) }}
                     value={newDeadline} />
             </div>
-            <Button disabled={!newTask && !newDeadline} sx={{ m: 2 }} variant="contained" type='submit'>SUBMIT</Button>
+            <button disabled={!newTask && !newDeadline} sx={{ m: 2 }} variant="contained" type='submit'>SUBMIT</button>
         </form>
     )
 }
