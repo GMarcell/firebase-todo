@@ -10,11 +10,11 @@ function Todo(props) {
         await deleteDoc(doc(db, "todo", id))
     }
     return (
-        <div sx={{ border: 5, display: "flex", borderRadius: 16, mt: 2 }} >
-            <li style={{ display: "flex" }}>
-                <div justifyContent="center" alignItems="center" >
-                    <h2  > ✅ Task: {props.todo}</h2>
-                    <h2  > ⏰ Deadline: {props.deadline}</h2>
+        <div className='mt-5 list-none bg-blue-400 rounded'>
+            <li className='flex'>
+                <div>
+                    <h2> ✅ Task: {props.todo}</h2>
+                    <h2> ⏰ Deadline: {props.deadline}</h2>
                 </div>
                 <IconButton onClick={() => { deleteTask(props.iddoc) }}>
                     <CloseIcon />
